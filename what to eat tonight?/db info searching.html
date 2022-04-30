@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+// p1 central block
+// input: id, process (central ()), output: db1, db2, db3, error
+module.exports = function(id) {
+  return new Promise(function(resolve, reject){
+    
+  })
+   
+        //p2 valut block
+        
+  
+
+//mark block
+     
+
+
+
+</html>
+
+
+// p1 & p2 async: happen at the same time 
+// promise.all([p1, p2]) then
+//p1:  central(id).then(function(data) { ... })
+
+db1(id).then (function(data){
+    resolve1(data)
+}).catch(function(){
+    reject("Error db1")
+})
+
+
+
+
+var promise = new Promise(function(resolve, reject){
+    resolve();
+    reject();
+})
+
+var a = function(){
+    return new Promise (function(resolve, reject){
+        resolve(function(){  
+       
+        })
+        a.then(function(){
+            resolve()
+        }).catch(function(){
+            reject()
+        })
+    })
+}

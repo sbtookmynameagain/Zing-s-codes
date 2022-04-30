@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<p id="demo"></p>
+
+<script>
+    let currentDate = new Date();
+    let month  = currentDate.getMonth()+1;
+    let Dd = currentDate.getDate();
+    if (month<10){
+        month = "0"+month;
+    }
+    if (Dd<10){
+        Dd ="0"+ Dd;
+    }
+    
+    let  fullYear = currentDate.getFullYear();
+
+    document.getElementById("demo").innerHTML = month+"-"+ Dd + "-"+ fullYear;
+
+
+//mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+</script>
+</body>
+</html>
+

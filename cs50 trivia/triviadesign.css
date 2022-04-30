@@ -1,0 +1,31 @@
+body{
+    background-color:rgb(166, 214, 237);
+}
+
+
+
+.top_banner{
+    background-color: rgb(45, 158, 228);
+    font-style:oblique;
+    padding: 90px;
+    
+}
+
+h1{
+    color:aliceblue;
+    font-size: 70px;
+}
+
+#multiple_choices{
+    background-color: rgb(227, 241, 255);
+    border-radius: 20px;
+    padding:10px 10px 100px 10px;
+}
+
+#Blanck_filling{
+    background-color: rgb(227, 241, 255);
+    border-radius: 20px;
+    padding:10px 10px 100px 10px;
+}
+
+    

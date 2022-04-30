@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container {
+        width: 0;
+        height: 0;
+        position: relative;
+        background: mediumslateblue;
+    }
+
+    #animate {
+        width: 0;
+        height: 0;
+        position: absolute;
+        background: mediumturquoise;
+    }
+</style>
+
+<body>
+    MapWidth: <input id="MW"> <br>
+    MapHeight: <input id="MH"> <br>
+    ParcelWidth: <input id="PW"> <br>
+    ParcelHeight: <input id="PH"> <br>
+    speed: <input id="moveTime"> <br>
+    <br>
+    background color for Map: <input id="MC"><br>
+    background color for parcel: <input id="PC"><br>
+    <br>
+
+    <button id="Create" onclick="Create()"> Create canvas</button>
+    <br>
+    <br>
+
+    <button id="btn" onclick="myMove()" style="display:none"> Move!</button>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+</body>
+
+<script>
+    //get the usermsg
+    function getUsermsg() {
+
+        var MW = document.getElementById("MW").value;
+        var MH = document.getElementById("MH").value;
+        var PW = document.getElementById("PW").value;
+        var PH = document.getElementById("PH").value;
+        var MT = document.getElementById("moveTime").value;
+        var MC = document.getElementById("MC").value;
+        var PC = document.getElementById("PC").value;
+
+        return {
+            MW: MW,
+            MH: MH,
+            PW: PW,
+            PH: PH,
+            MT: MT,
+            MC: MC,
+            PC: PC
+        }
+    }
+   
+    //create the canvas
+    function Create() {
+
+        var { MW, MH, PW, PH, MT, MC, PC} = getUsermsg();
+
+        document.getElementById("btn").style.display = "block";
+
+
+        document.getElementById("container").style.background = MC;
+        document.getElementById("animate").style.background = PC
+        
+
+        document.getElementById("container").style.width = MW + "px";
+        document.getElementById("container").style.height = MH + "px";
+        document.getElementById("animate").style.width = PW + "px";
+        document.getElementById("animate").style.height = PH + "px";
+        //anticipated problems
+        if (isNaN(MW) || isNaN(MH) || isNaN(PW) || isNaN(PH) || isNaN(MT)) {
+            alert("please insert a number!")
+        }
+        if (!MW || !MH || !PW || !PH || !MT) {
+            alert("Why not entering something?")
+        }
+
+    }
+
+
+
+
+
+    //move 
+
+    function myMove() {
+        var { MW, MH, PW, PH, MT, MT } = getUsermsg();
+        let x = document.getElementById("animate");
+        let pos = 0;
+        id = setInterval(go, MT);
+
+        function go() {
+            if (pos == (MW - PW)) {
+                clearInterval(id)
+            } else {
+                pos++;
+                x.style.top = pos + "px";
+                x.style.left = pos * ((MW - PW) / (MH - PH)) + "px";
+
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

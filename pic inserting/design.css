@@ -1,0 +1,18 @@
+body{
+    background-color:palegoldenrod;
+}
+
+
+.row{
+    min-height: 90vh;
+}
+
+.col-6{
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.4rem 2.2rem;
+}
+
+.block{
+    width: 100%;
+}
